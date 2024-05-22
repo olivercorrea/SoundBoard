@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="689" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Sound View Controller-->
         <scene sceneID="Em6-yB-aGE">
             <objects>
-                <viewController id="HMd-QU-rZj" sceneMemberID="viewController">
+                <viewController id="HMd-QU-rZj" customClass="SoundViewController" customModule="SoundBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5H-2v-2Rd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

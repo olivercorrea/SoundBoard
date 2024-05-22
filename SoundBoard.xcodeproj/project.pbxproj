@@ -14,6 +14,7 @@
 		A72E2D6E2BFD94DD00446D9D /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A72E2D6C2BFD94DD00446D9D /* SoundBoard.xcdatamodeld */; };
 		A72E2D702BFD94DF00446D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72E2D6F2BFD94DF00446D9D /* Assets.xcassets */; };
 		A72E2D732BFD94DF00446D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72E2D712BFD94DF00446D9D /* LaunchScreen.storyboard */; };
+		A72E2D7B2BFDA4E800446D9D /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72E2D7A2BFDA4E800446D9D /* SoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A72E2D6F2BFD94DF00446D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A72E2D722BFD94DF00446D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A72E2D742BFD94DF00446D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72E2D7A2BFDA4E800446D9D /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A72E2D652BFD94DD00446D9D /* SceneDelegate.swift */,
 				A72E2D672BFD94DD00446D9D /* ViewController.swift */,
 				A72E2D692BFD94DD00446D9D /* Main.storyboard */,
+				A72E2D7A2BFDA4E800446D9D /* SoundViewController.swift */,
 				A72E2D6F2BFD94DF00446D9D /* Assets.xcassets */,
 				A72E2D712BFD94DF00446D9D /* LaunchScreen.storyboard */,
 				A72E2D742BFD94DF00446D9D /* Info.plist */,
@@ -145,6 +148,7 @@
 				A72E2D682BFD94DD00446D9D /* ViewController.swift in Sources */,
 				A72E2D642BFD94DD00446D9D /* AppDelegate.swift in Sources */,
 				A72E2D662BFD94DD00446D9D /* SceneDelegate.swift in Sources */,
+				A72E2D7B2BFDA4E800446D9D /* SoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
