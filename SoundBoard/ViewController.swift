@@ -49,5 +49,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } catch{}
         tablaGrabaciones.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let grabacion = grabaciones[indexPath.row]
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            context.delete(grabacion)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            do {
+                grabaciones = try context.fetch(Grabacion.fetchRequest())
+                tablaGrabaciones.reloadData()
+            } catch {}
+        }
+    }
 }
 
