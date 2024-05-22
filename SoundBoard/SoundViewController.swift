@@ -16,11 +16,14 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var agregarButton: UIButton!
     
     var grabarAudio:AVAudioRecorder?
+    var reproducirAudio:AVAudioPlayer?
+    var audioURL:URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configurarGrabacion()
+        reproducirButton.isEnabled = false
 
         // Do any additional setup after loading the view.
     }
@@ -36,11 +39,11 @@ class SoundViewController: UIViewController {
             //Creando direccion para el archivo de audio
             let basePath:String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
-            let audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
+            audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
             
             //Impresion de ruta donde se guardan los archivos
             print("**********************")
-            print(audioURL)
+            print(audioURL!)
             print("**********************")
             
             //Crear opciones para el grabador de audio
@@ -50,7 +53,7 @@ class SoundViewController: UIViewController {
             settings[AVNumberOfChannelsKey] = 2 as AnyObject?
                         
             // Crear el objeto de grabación de audio
-            grabarAudio = try AVAudioRecorder(url: audioURL, settings: settings)
+            grabarAudio = try AVAudioRecorder(url: audioURL!, settings: settings)
             grabarAudio!.prepareToRecord()
         } catch let error as NSError {
             print(error)
@@ -63,14 +66,21 @@ class SoundViewController: UIViewController {
             grabarAudio?.stop()
             //Cambiar texto del boton grabar
             grabarButton.setTitle("GRABAR", for: .normal)
+            reproducirButton.isEnabled = true
         }else{
             //Empezar a grabar
             grabarAudio?.record()
             //Cambiar el texto del boton grabar a detener
             grabarButton.setTitle("DETENER", for: .normal)
+            reproducirButton.isEnabled = false
         }
     }
     @IBAction func reproducirTapped(_ sender: Any) {
+        do {
+            try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
+            reproducirAudio!.play()
+            print("Reproduciendo")
+        } catch {}
     }
     @IBAction func agregarTapped(_ sender: Any) {
     }
